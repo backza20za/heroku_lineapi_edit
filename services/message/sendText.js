@@ -13,6 +13,12 @@ exports.sendText = (event) => {
       packageId: "789",
       stickerId: "10856",
     };
+  } else if (msgText === "drink") {
+    {
+  "type": "image",
+  "originalContentUrl": "https://back-line-api.herokuapp.com/images/homebrew.png",
+  "previewImageUrl": "https://back-line-api.herokuapp.com/images/homebrew.png"
+}
   } else {
     msg = { type: "text", text: "unknow promotion" };
   }
