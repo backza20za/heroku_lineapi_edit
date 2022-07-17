@@ -16,8 +16,8 @@ exports.sendText = (event) => {
   } else if (msgText === "drink") {
     {
   "type": "image",
-  "originalContentUrl": "https://back-line-api.herokuapp.com/images/homebrew.png",
-  "previewImageUrl": "https://back-line-api.herokuapp.com/images/homebrew.png"
+  "originalContentUrl": "https://brew.sh/assets/img/homebrew-256x256.png",
+  "previewImageUrl": "https://brew.sh/assets/img/homebrew-256x256.png"
 }
   } else {
     msg = { type: "text", text: "unknow promotion" };
