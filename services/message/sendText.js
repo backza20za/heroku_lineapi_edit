@@ -13,6 +13,12 @@ exports.sendText = (event) => {
       packageId: "789",
       stickerId: "10856",
     };
+  } else if (msgText === "drink") {
+    msg = {
+      type: "image",
+      originalContentUrl: `${process.env.BASE_URL}/images/homebrew.png`,
+      previewImageUrl: `${process.env.BASE_URL}/images/homebrew.png`,
+    };
   } else {
     msg = { type: "text", text: "unknow promotion" };
   }
