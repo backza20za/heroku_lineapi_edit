@@ -1,3 +1,4 @@
+const config = require("../config/line");
 // event handler
 exports.handleEvent = (event) => {
   //   console.log(event);
