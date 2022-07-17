@@ -1,5 +1,5 @@
 // const config = require("../config/line");
-const Message = require("./handle-message");
+const service = require("./handle-message");
 // event handler
 exports.handleEvent = (event) => {
   //   //   console.log(event);
@@ -17,9 +17,7 @@ exports.handleEvent = (event) => {
     case "message":
       switch (event.message.type) {
         case "text":
-          //   console.log("text message");
-          Message.handleMessage;
-          break;
+          service.handleMessage(event);
         case "sticker":
           console.log("sticker");
           break;
