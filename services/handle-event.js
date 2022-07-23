@@ -18,6 +18,7 @@ exports.handleEvent = (event) => {
       switch (event.message.type) {
         case "text":
           service.handleMessage(event);
+          break;
         case "sticker":
           console.log("sticker");
           break;
