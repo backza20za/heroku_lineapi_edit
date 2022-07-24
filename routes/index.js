@@ -7,7 +7,8 @@ router.get("/", function (req, res, next) {
 });
 
 router.get("/auth/callback", async (req, res, next) => {
-  const domain = "https://back-line-api.herokuapp.com/auth/callback";
+  // const domain = "https://back-line-api.herokuapp.com/auth/callback";
+  console.log(req.query.code);
   return res.status(200).json({ message: "Login Success" });
 });
 
