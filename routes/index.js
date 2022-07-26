@@ -28,6 +28,7 @@ router.get("/auth/callback", async (req, res, next) => {
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
     }
   );
+  return res.status(200).json({ message: response });
 });
 
 module.exports = router;
