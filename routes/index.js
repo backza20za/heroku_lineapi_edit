@@ -12,13 +12,13 @@ router.get("/auth/callback", async function (req, res, next) {
   // console.log(req.query.code);
 
   // get access token
-  // const params = new URLSearchParams({
-  //   grant_type: "authorization_code",
-  //   code: req.query.code,
-  //   redirect_uri: process.env.BASE_URL + "/auth/callback", // callback url
-  //   client_id: process.env.LOGIN_CLIENT_ID,
-  //   client_secret: process.env.LOGIN_CLIENT_SECRET,
-  // });
+  const params = new URLSearchParams({
+    grant_type: "authorization_code",
+    code: req.query.code,
+    redirect_uri: process.env.BASE_URL + "/auth/callback", // callback url
+    client_id: process.env.LOGIN_CLIENT_ID,
+    client_secret: process.env.LOGIN_CLIENT_SECRET,
+  });
 
   // const response = await axios.post(
   //   "https://api.line.me/oauth2/v2.1/token",
