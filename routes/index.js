@@ -8,15 +8,14 @@ router.get("/", function (req, res, next) {
   res.render("index", { title: "Express" });
 });
 
-router.get("/auth/callback", async (req, res, next) => {
-  // const domain = "https://back-line-api.herokuapp.com/auth/callback";
+router.get("/auth/callback", async function (req, res, next) {
   // console.log(req.query.code);
-  // return res.status(200).json({ message: "Login Success" });
 
+  // get access token
   const params = new URLSearchParams({
     grant_type: "authorization_code",
     code: req.query.code,
-    redirect_uri: process.env.BASE_URL + "/auth/callback",
+    redirect_uri: process.env.BASE_URL + "/auth/callback", // callback url
     client_id: process.env.LOGIN_CLIENT_ID,
     client_secret: process.env.LOGIN_CLIENT_SECRET,
   });
@@ -28,7 +27,14 @@ router.get("/auth/callback", async (req, res, next) => {
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
     }
   );
-  return res.status(200).json({ message: response });
+
+  // get profile from id_token
+  const user = jwt_decode(response.data.id_token);
+
+  return res.status(200).json({
+    user: user,
+    response: response.data,
+  });
 });
 
 module.exports = router;
